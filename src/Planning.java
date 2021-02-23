@@ -16,18 +16,17 @@ public class Planning extends ProjectParent {
         this.iteration = iteration;
         this.input = input;
     }
-    public double calculateInput(double input, double output, double iteration) {
-        if( iteration >2 && iteration < 4){
-            input = communication.calculateOutput();
-        }
-        return input;
+
+    public static double calculateBigIO (double input, double bigDouble){
+        double bigIO = input * bigDouble;
+
+        return bigIO;
     }
 
+    public static double calculatelilleIO (double input, double smallDouble){
+        double smallIO = input * smallDouble;
 
-    @Override
-    public double calculateOutput() {
-        double newOutput = input * output;
-        return newOutput;
+        return smallIO;
     }
 
 

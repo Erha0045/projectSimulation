@@ -1,39 +1,47 @@
-public class ProjectParent  {
+public class ProjectParent {
 
     protected String name;
     protected int iteration;
     protected double input;
-    protected double output;
-//    private  double bigOutput = input * 0.8;
-//    private  double smallOutput = input * 0.2;
 
-    public ProjectParent(){
+    protected double bigDouble = 0.8;
+    protected double smallDouble = 0.2;
 
-    }
-
-    public ProjectParent(String name, int iteration, double input, double output) {
+    public ProjectParent(String name, int iteration, double input, double bigDouble, double smallDouble) {
         this.name = name;
         this.iteration = iteration;
         this.input = input;
-        this.output = output;
+        this.bigDouble = bigDouble;
+        this.smallDouble = smallDouble;
     }
 
-    public ProjectParent(String name, int iteration, double output) {
+    public ProjectParent() {
     }
 
-    public ProjectParent(String name, int iteration) {
+    public static double calculateBigIO (double input, double bigDouble){
+        double bigIO = input * bigDouble;
+
+      return bigIO;
     }
 
-    public ProjectParent(String name) {
+    public static double calculatelilleIO (double input, double smallDouble){
+        double smallIO = input * smallDouble;
+
+        return smallIO;
     }
 
 
-    public double calculateOutput(){
-       return input;
-   }
-
-    public double calculateInput(){
-        return input;
-    }
-
+//    public static double calculateBigInput (double input, double bigDouble){
+//
+//        double bigInput = bigOutput;
+//
+//        return smallInput;
+//    }
+//
+//    public static double calculatelilleInput (double input, double smallDouble){
+//        double smallOutput = input * smallDouble;
+//
+//        return smallOutput;
+//    }
 }
+

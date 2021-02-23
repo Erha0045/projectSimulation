@@ -13,11 +13,9 @@ public class Communication extends ProjectParent {
 
     }
 
-    public Communication(String name, int iteration, double output, double input) {
-        super(name);
-        this.input = input;
-        this.output = output;
-        this.iteration= iteration;
+    public Communication(String name, int iteration, double input, double bigDouble, double smallDouble, double initialInput) {
+        super(name, iteration, input, bigDouble, smallDouble);
+        this.initialInput = initialInput;
     }
 
     public double getInput() {
@@ -36,21 +34,15 @@ public class Communication extends ProjectParent {
         this.output = output;
     }
 
-    public double calculateInput(double input, double output, double iteration) {
-        if (iteration == 1){
-            return input = 1;
-        }else if( iteration > 1){
-             input = planning.calculateOutput();
-        }
-            return input;
-        }
+//    public double calculateInitialInput(double input, double output, double iteration) {
+//        if (iteration == 1){
+//            return input = 1;
+//        }else if( iteration > 1){
+//             input = planning.calculateOutput();
+//        }
+//            return input;
+//        }
 
-
-    @Override
-    public double calculateOutput() {
-         output = initialInput * output;
-        return output;
-    }
 
 
     @Override
@@ -65,6 +57,10 @@ public class Communication extends ProjectParent {
     public int hashCode() {
         return Objects.hash(input, output);
     }
+
+
+
+
 
     @Override
     public String toString() {
